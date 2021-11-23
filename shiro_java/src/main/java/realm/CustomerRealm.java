@@ -10,7 +10,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 
 /**
  * 自定义realm实现，将认证授权的数据来源转为数据库实现
+ * 该类主要是通过继承AuthorizingRealm并重写两个方法
  *
+ * 一个方法用于授权一个用于认证
  *
  */
 public class CustomerRealm extends AuthorizingRealm {
