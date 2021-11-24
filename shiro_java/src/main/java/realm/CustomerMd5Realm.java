@@ -24,7 +24,7 @@ public class CustomerMd5Realm extends AuthorizingRealm {
         String primaryPrincipal = (String) principalCollection.getPrimaryPrincipal();
         System.out.println("身份信息"+primaryPrincipal);
         // 根据身份信息，用户名，获取当前用户的角色信息，以及权限信息
-        SimpleAuthorizationInfo  simpleAuthorizationInfo= new SimpleAuthorizationInfo(); 
+        SimpleAuthorizationInfo  simpleAuthorizationInfo= new SimpleAuthorizationInfo();
 
       // 将数据库中查询权限信息赋值给权限对象
         simpleAuthorizationInfo.addStringPermission("user:*:01");

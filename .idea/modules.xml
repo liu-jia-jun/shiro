@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/shiro.iml" filepath="$PROJECT_DIR$/.idea/shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/shiro_java/shiro_java.iml" filepath="$PROJECT_DIR$/shiro_java/shiro_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro_springboot/shiro_springboot.iml" filepath="$PROJECT_DIR$/shiro_springboot/shiro_springboot.iml" />
     </modules>
   </component>
 </project>
