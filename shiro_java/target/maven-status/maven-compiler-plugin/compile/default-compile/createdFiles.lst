@@ -1,0 +1,6 @@
+ShiroTest\TestMD5.class
+ShiroTest\TestCustormerMd5RealmAuthenticator.class
+realm\CustomerRealm.class
+realm\CustomerMd5Realm.class
+ShiroTest\TestAuthenticator.class
+ShiroTest\TestCustromerRealmAuthenticator.class

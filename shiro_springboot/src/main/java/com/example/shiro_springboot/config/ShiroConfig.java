@@ -16,6 +16,33 @@ import java.util.Map;
  * @author asus
  *
  * shiro 整合springboot 的配置类
+ *
+ *
+ * shiro中常见的过滤器
+ *
+ * 1. anon  配置请求的url可以匿名访问 ，即无需认证和授权
+ *
+ * 2. authc 指定的url 需要form表单登录默认会从请求中获取username，password，remember 等参数并尝试登录，
+ *          如果登录失败就会挑战到loginUrl配置的路径
+ *          我们也可以用这个过滤器做默认的登录逻辑，但是一般我们都自己写在控制器中，可以定制出错的返回信息
+ *
+ * 3. authcBasic    指定的url需要basic登录
+ *
+ * 4. logout        退出过滤器，配置指定的url即可实现退出功能
+ *
+ * 5. noSessionCreation     禁止创建会话
+ *
+ * 6. perms     需要指定的权限才能访问
+ *
+ * 7. port      需要指定的端口才能访问
+ *
+ * 8. roles     需要指定的角色才能访问
+ *
+ * 9. ssl       需要https请求才能访问
+ *
+ * 10 user      需要已登录或者"记住我"的用户才能访问
+ *
+ *
  */
 @Configuration
 public class ShiroConfig {
@@ -32,7 +59,7 @@ public class ShiroConfig {
         // shiroFilterFactoryBean 是用于拦截所有的请求，我们通过shiriFilterFactoryBean来配置系统受限资源，配置系统公共资源
         Map<String,String> map = new HashMap<>();
 
-        //
+        // anon 配置 请求这个资源可以不用认证和授权
         map.put("/user/login","anon");
         // authc 配置 请求这个资源需要认证和授权
         map.put("/user/index","authc");
