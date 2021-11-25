@@ -31,12 +31,16 @@ public class ShiroConfig {
 
         // shiroFilterFactoryBean 是用于拦截所有的请求，我们通过shiriFilterFactoryBean来配置系统受限资源，配置系统公共资源
         Map<String,String> map = new HashMap<>();
+
+        //
+        map.put("/user/login","anon");
         // authc 配置 请求这个资源需要认证和授权
-        map.put("/**","authc");
+        map.put("/user/index","authc");
+        map.put("/","authc");
 
 
         // 配置默认认证界面路径，即登录页面路径
-        shiroFilterFactoryBean.setLoginUrl("/login");
+        shiroFilterFactoryBean.setLoginUrl("/user/login");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
 
 
