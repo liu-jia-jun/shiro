@@ -1,4 +1,7 @@
-package com.example.shiro_springboot.pojo;
+package com.example.shiro_springboot.entity;
+
+
+
 
 public class User {
     private String id;

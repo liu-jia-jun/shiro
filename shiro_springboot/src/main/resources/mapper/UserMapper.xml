@@ -13,13 +13,10 @@
 
     <!--        select表示查询，id表示sql语法的唯一标识，mybatis会使用这个id值来找到要执行的sql语句，要求用接口中的方法名称-->
     <!--        resultType表示返回的结果类型，值为该类型的全类名-->
-    <select id="getUserByUserName" resultType="com.example.shiro_springboot.pojo.User">
+    <select id="selectUserByUserName" resultType="User">
         <!--        要执行的sql语句-->
         select id,username,password,salt from shiro_user where username = #{username}
     </select>
 
-    <select id="test" resultType="String">
-        select "abc"
-    </select>
 
 </mapper>

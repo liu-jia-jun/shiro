@@ -1,8 +1,9 @@
 package com.example.shiro_springboot.service;
 
 
+import com.example.shiro_springboot.entity.User;
 import com.example.shiro_springboot.mapper.UserMapper;
-import com.example.shiro_springboot.pojo.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,8 @@ public class UserServiceImpl implements UserService{
     public User getUserByUserName(String username) {
 
 
-        return userMapper.getUserByUserName(username);
+        return userMapper.selectUserByUserName(username);
     }
 
-    @Override
-    public String test() {
-        return userMapper.test();
-    }
+
 }

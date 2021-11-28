@@ -1,6 +1,6 @@
 package com.example.shiro_springboot.controller;
 
-import com.example.shiro_springboot.service.UserService;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -57,13 +57,6 @@ public class TestController {
         return "login";
     }
 
-    @Autowired
-    UserService userService;
 
-    @GetMapping("/test")
-    @ResponseBody
-    public String test(){
-        return userService.test();
-    }
 
 }
