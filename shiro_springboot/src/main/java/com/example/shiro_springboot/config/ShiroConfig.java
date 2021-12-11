@@ -60,7 +60,7 @@ public class ShiroConfig {
         Map<String,String> map = new HashMap<>();
 
         // anon 配置 请求这个资源可以不用认证和授权
-//        map.put("/login","anon");
+        map.put("/login","anon");
         // authc 配置 请求这个资源需要认证和授权
         map.put("/index","authc");
 
