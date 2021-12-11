@@ -3,6 +3,9 @@ package com.example.shiro_springboot.entity;
 
 
 
+/**
+ * @author 刘佳俊
+ */
 public class User {
     private String id;
     private String userName;
