@@ -11,13 +11,13 @@ public class User {
     private String userName;
     private String password;
     private String salt;
-    private List<String> roles;
+    private List<Role> roles;
 
-    public List<String> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<String> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 

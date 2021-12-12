@@ -63,6 +63,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-crypto-cipher</artifactId>
+            <version>1.5.3</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

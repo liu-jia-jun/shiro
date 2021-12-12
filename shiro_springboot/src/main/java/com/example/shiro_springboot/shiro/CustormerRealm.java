@@ -1,5 +1,7 @@
 package com.example.shiro_springboot.shiro;
 
+import com.example.shiro_springboot.entity.Perms;
+import com.example.shiro_springboot.entity.Role;
 import com.example.shiro_springboot.entity.User;
 import com.example.shiro_springboot.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
@@ -12,6 +14,9 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author asus
@@ -31,14 +36,36 @@ public class CustormerRealm extends AuthorizingRealm {
                 primaryPrincipal);
 
 
-        // 根据用户名查询出该用户的角色，一个用户可能有多个角色，所以返回的是一个role的list列表
+        // 根据用户名查询出该用户的角色，一个用户可能有多个角色，所以返回的user对象中的role是一个list列表
         User user = userService.getUserByUserName(primaryPrincipal);
         // 授权角色信息
 
         if (!user.getRoles().isEmpty()){
             SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
             // 将用户的角色信息放到用户中
-           simpleAuthorizationInfo.addRoles(user.getRoles());
+
+            for (Role role:user.getRoles()
+                 ) {
+                simpleAuthorizationInfo.addRole(role.getName());
+
+
+                // 根据角色查询用户的操作权限
+
+                // 这里需要通过用户的角色来查询用户的操作权限，这里直接使用了一个空的list集合代替
+                List<Perms> perms = new ArrayList<>();
+
+                if (!perms.isEmpty()){
+                    for (Perms perm : perms) {
+                        // 将用户的权限写入到project对象中
+                        simpleAuthorizationInfo.addStringPermission(perm.getName());
+                    }
+                }
+
+
+
+            }
+
+
            return simpleAuthorizationInfo;
         }
 
