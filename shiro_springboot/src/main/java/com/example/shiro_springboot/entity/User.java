@@ -1,7 +1,7 @@
 package com.example.shiro_springboot.entity;
 
 
-
+import java.util.List;
 
 /**
  * @author 刘佳俊
@@ -11,15 +11,14 @@ public class User {
     private String userName;
     private String password;
     private String salt;
+    private List<String> roles;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                '}';
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
     public String getId() {

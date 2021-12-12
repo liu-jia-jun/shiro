@@ -5,4 +5,9 @@
     <select id="selectUserByUserName" resultType="User">
         select id,username,password,salt from shiro_user where username = #{username}
     </select>
+
+    <insert id="insertUser" parameterType="User">
+        insert into shiro_user(username,password,salt) value(#{username},#{password},#{salt})
+    </insert>
+
 </mapper>

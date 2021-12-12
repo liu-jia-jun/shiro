@@ -3,6 +3,7 @@ package com.example.shiro_springboot.config;
 
 
 import com.example.shiro_springboot.shiro.CustormerRealm;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -92,6 +93,13 @@ public class ShiroConfig {
     @Bean
     public Realm getReaml(){
         CustormerRealm custormerRealm = new CustormerRealm();
+
+        HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
+        // 使用算法
+        credentialsMatcher.setHashAlgorithmName("md5");
+        // 使用散列并指定散列此时，默认是1次
+        credentialsMatcher.setHashIterations(1024);
+        custormerRealm.setCredentialsMatcher(credentialsMatcher);
         return  custormerRealm;
     }
 }

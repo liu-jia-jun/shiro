@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>register</title>
 </head>
 <body>
-<h1>please login before access the page</h1>
-<form method="post" action="/toAccessIndex">
+<form method="post" action="/register">
     name:<input type="text" placeholder="请输入用户名" name="username"><br>
     password:<input type="password" placeholder="请输入密码" name="password"><br>
-    <input type="submit" value="login">
+    <input type="submit" value="register">
 </form>
 
-<a th:href="@{/toRegister}">去注册</a>
+
 </body>
 </html>

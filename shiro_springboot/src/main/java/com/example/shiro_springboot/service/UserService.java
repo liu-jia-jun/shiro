@@ -8,5 +8,7 @@ public interface UserService {
 
     User getUserByUserName(String username);
 
+    int insertUser(User user);
+
 
 }
